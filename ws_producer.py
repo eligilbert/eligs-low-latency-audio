@@ -2,7 +2,7 @@ import asyncio
 import websockets
 
 async def produce(message):
-    async with websockets.connect("ws://eligs-low-latency-audio.herokuapp.com:80") as ws:
+    async with websockets.connect("ws://eligs-low-latency-audio.herokuapp.com:8080") as ws:
     # async with websockets.connect("ws://localhost:8080") as ws:
         await ws.send(message)
         await ws.recv()
