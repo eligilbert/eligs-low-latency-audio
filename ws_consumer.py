@@ -22,6 +22,7 @@ async def consumer_handler(websocket):
         stream.write(message, CHUNK)
 
 async def consume():
+    # websocket_resource_url = "ws://eligs-low-latency-audio.herokuapp.com:8080"
     websocket_resource_url = "ws://localhost:8080"
     async with websockets.connect(websocket_resource_url) as websocket:
         await consumer_handler(websocket)
