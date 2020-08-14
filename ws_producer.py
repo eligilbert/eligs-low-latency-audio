@@ -2,8 +2,8 @@ import asyncio
 import websockets
 
 async def produce(message):
-    # async with websockets.connect("ws://eligs-low-latency-audio.herokuapp.com") as ws:
-    async with websockets.connect("ws://10.0.0.157") as ws:
+    async with websockets.connect("ws://eligs-low-latency-audio.herokuapp.com") as ws:
+    # async with websockets.connect("ws://10.0.0.157"s) as ws:
         await ws.send(message)
         await ws.recv()
 
@@ -31,5 +31,6 @@ while True:
     #     print("Input overflowed. Please restart producer!")
     #     break
     data = stream.read(CHUNK)
+    print("sending")
     # print(data)
     asyncio.run(produce(data))
